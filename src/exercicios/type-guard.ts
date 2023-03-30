@@ -11,4 +11,6 @@ export interface AuthenticatedUser {
 
 export type User = GuestUser | AuthenticatedUser;
 
-// Crie uma função de type-guard que sirva para afunilar o tipo específico de User
+function isAuthenticated (user: GuestUser | AuthenticatedUser): user is AuthenticatedUser{
+    return 'id' in user;
+}

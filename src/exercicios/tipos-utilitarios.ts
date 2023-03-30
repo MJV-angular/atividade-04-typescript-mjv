@@ -13,7 +13,7 @@ export type UserSemId = {
     email: string;
 };
 
-export function createUser(user: UserSemId) {
+export function createUser(user: Omit<User, 'id'>) {
     // .... nada a fazer aqui, só exemplificando um caso de uso
 }
 
@@ -25,7 +25,7 @@ export type UserComIdMasRestoOpcional = {
     email?: string;
 };
 
-export function updateUser(user: UserComIdMasRestoOpcional) {
+export function updateUser(user: Partial<User> & Required<Pick<User, 'id'>>) {
     // .... nada a fazer aqui, só exemplificando um caso de uso
 }
 
@@ -34,6 +34,6 @@ export type UserName = {
     name: string;
 }
 
-export function getUserName(user: UserName): string {
+export function getUserName(user:  Pick<User, 'name'>): string {
     return user.name;
 }

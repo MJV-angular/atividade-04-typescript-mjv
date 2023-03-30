@@ -7,3 +7,7 @@ export type ItemTexto = {
 export type ItemNumerico = {
     valor: number;
 }
+
+export type Item<T> = {
+    valor: T;
+}

@@ -2,3 +2,6 @@
 // Coloque a tipagem para que o Typescript consiga automaticamente entender esse retorno
 // Dica: utilize um parâmetro de tipo para receber o tipo do argumento
 
+const typeArray = <T>(value: T): boolean => {
+  return Array.isArray(value);
+};
